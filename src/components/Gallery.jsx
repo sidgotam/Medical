@@ -28,8 +28,9 @@ const Gallery = () => {
   };
 
   const closeModal = () => {
+    setLightboxImage(null);
     setIsModalOpen(false);
-    document.body.style.overflow = 'auto';
+    document.body.style.overflow = '';
   };
 
   // Keyboard escape

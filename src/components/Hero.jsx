@@ -91,15 +91,9 @@ const Hero = () => {
 
   const handleSlideClick = (id) => {
     if (id === 1) {
-      document.getElementById('doctors')?.scrollIntoView({ behavior: 'smooth' });
-      setTimeout(() => {
-        window.dispatchEvent(new CustomEvent('openDoctorProfile', { detail: 0 }));
-      }, 600);
+      window.dispatchEvent(new CustomEvent('openDoctorProfile', { detail: 0 }));
     } else if (id === 2) {
-      document.getElementById('doctors')?.scrollIntoView({ behavior: 'smooth' });
-      setTimeout(() => {
-        window.dispatchEvent(new CustomEvent('openDoctorProfile', { detail: 1 }));
-      }, 600);
+      window.dispatchEvent(new CustomEvent('openDoctorProfile', { detail: 1 }));
     } else if (id === 3) {
       window.open('https://wa.me/919450878415', '_blank');
     } else {

@@ -113,7 +113,7 @@ const Doctors = () => {
 
   const closeProfile = () => {
     setSelectedDoctor(null);
-    document.body.style.overflow = 'auto';
+    document.body.style.overflow = '';
   };
 
   const openLightbox = (index) => {
@@ -236,7 +236,7 @@ const Doctors = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 md:p-6"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-0 md:p-6"
             onClick={closeProfile}
           >
             <motion.div 
@@ -244,7 +244,7 @@ const Doctors = () => {
               animate={{ y: 0, opacity: 1, scale: 1 }}
               exit={{ y: 50, opacity: 0, scale: 0.95 }}
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
-              className="bg-white rounded-3xl shadow-2xl w-full max-w-5xl max-h-[90vh] overflow-hidden flex flex-col relative"
+              className="bg-white rounded-none md:rounded-3xl shadow-2xl w-full max-w-5xl h-[100dvh] md:h-auto md:max-h-[90vh] overflow-hidden flex flex-col relative"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Close Button */}
@@ -290,10 +290,6 @@ const Doctors = () => {
                         <span>Kalash Chikitsalaya</span>
                       </div>
                     </div>
-                    
-                    <button onClick={closeProfile} className="mt-8 w-full btn-primary py-3 rounded-xl md:hidden">
-                      Close Profile
-                    </button>
                   </div>
  
                   {/* Right Column: Details & Gallery */}
