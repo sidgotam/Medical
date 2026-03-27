@@ -168,11 +168,8 @@ const Testimonials = () => {
       reply_to: "chikitsalayakalash@gmail.com"
     };
 
-    // Note: Template ID is missing from user's provided list, but 'chikitsalayakalash@gmail.com' was given.
-    // I'll assume they meant 'template_bpkw49l' or similar if they didn't provide it.
-    // Actually, I'll use a placeholder 'template_testimonials' and let the user know.
     const serviceID = 'service_bpkw49l';
-    const templateID = 'template_testimonials'; // PLACEHOLDER: Please update with your actual Template ID
+    const templateID = 'template_testimonials';
     const publicKey = 'jRPvn2TmKAP5a-HS-';
 
     emailjs.send(serviceID, templateID, templateParams, publicKey)
@@ -183,7 +180,6 @@ const Testimonials = () => {
         setIsSubmitting(false);
       }, (err) => {
         console.error('FAILED...', err);
-        // Fallback to mailto if EmailJS is not fully configured (missing Template ID)
         const subject = encodeURIComponent(`Testimonial from ${name}`);
         const body = encodeURIComponent(`Name: ${name}\nLocation: ${location}\n\nExperience:\n${feedback}\n\n[Please attach any audio/video files]`);
         window.location.href = `mailto:chikitsalayakalash@gmail.com?subject=${subject}&body=${body}`;

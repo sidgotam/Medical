@@ -12,7 +12,6 @@ const slides = [
     image: "/hero/id1.png",
     btn1Icon: <Phone size={18} />,
     btn1Text: "Call Now",
-    // btn2Text: "Learn More"
   },
   {
     id: 2,
@@ -23,7 +22,6 @@ const slides = [
     image: "/hero/id2.png",
     btn1Icon: <Phone size={18} />,
     btn1Text: "Call Now",
-    // btn2Text: "Our Specialists"
   },
   {
     id: 3,
@@ -103,10 +101,8 @@ const Hero = () => {
         window.dispatchEvent(new CustomEvent('openDoctorProfile', { detail: 1 }));
       }, 600);
     } else if (id === 3) {
-      // Open WhatsApp for Slide 3
       window.open('https://wa.me/919450878415', '_blank');
     } else {
-      // Logic for 3rd slide if needed, typically scrolling to facilities or gallery
       document.getElementById('gallery')?.scrollIntoView({ behavior: 'smooth' });
     }
   };
