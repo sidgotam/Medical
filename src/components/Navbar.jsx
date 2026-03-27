@@ -105,7 +105,7 @@ const Navbar = () => {
 
       {/* Mobile Menu Overlay */}
       <div 
-        className={`lg:hidden fixed inset-0 top-[60px] md:top-[70px] bg-white z-30 transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}
+        className={`lg:hidden fixed inset-0 top-[60px] md:top-[70px] bg-white z-30 transition-all duration-300 ease-in-out ${isOpen ? 'translate-x-0 opacity-100 visible' : 'translate-x-full opacity-0 invisible pointer-events-none'}`}
       >
         <div className="flex flex-col h-full px-6 py-8 gap-6 overflow-y-auto">
           {navItems.map((item) => (

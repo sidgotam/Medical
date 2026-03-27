@@ -17,7 +17,7 @@ import Panchkarma from './components/Panchkarma';
 
 function App() {
   return (
-    <div className="min-h-screen bg-background flex flex-col font-sans">
+    <div className="min-h-screen bg-background flex flex-col font-sans overflow-x-hidden w-full relative">
       <Navbar />
       <main className="flex-grow">
         <Hero />
