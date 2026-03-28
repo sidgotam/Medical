@@ -6,10 +6,28 @@ const CallModal = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    const handleOpen = () => setIsOpen(true);
+    const handleOpen = () => {
+      setIsOpen(true);
+      document.body.style.overflow = 'hidden';
+    };
     window.addEventListener('openCallModal', handleOpen);
-    return () => window.removeEventListener('openCallModal', handleOpen);
+
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') closeModal();
+    };
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      window.removeEventListener('openCallModal', handleOpen);
+      window.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = '';
+    };
   }, []);
+
+  const closeModal = () => {
+    setIsOpen(false);
+    document.body.style.overflow = '';
+  };
 
   const contactNumbers = [
     { label: "Phone Line 1", number: "+917607131682", display: "+91 76071 31682", icon: <Phone className="text-emerald-500" /> },
@@ -25,7 +43,7 @@ const CallModal = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            onClick={() => setIsOpen(false)}
+            onClick={closeModal}
             className="absolute inset-0 bg-gray-900/60 backdrop-blur-sm"
           />
 
@@ -39,7 +57,7 @@ const CallModal = () => {
             {/* Header */}
             <div className="bg-primary-500 p-5 sm:p-6 text-white relative">
               <button 
-                onClick={() => setIsOpen(false)}
+                onClick={closeModal}
                 className="absolute top-3 right-3 sm:top-4 sm:right-4 p-1.5 sm:p-2 hover:bg-white/20 rounded-full transition-colors"
               >
                 <X size={20} />
@@ -85,7 +103,7 @@ const CallModal = () => {
                 </div>
                 <button 
                   onClick={() => {
-                    setIsOpen(false);
+                    closeModal();
                     window.open('https://wa.me/919450878415', '_blank');
                   }}
                   className="flex items-center justify-center gap-2 w-full py-2 sm:py-3 rounded-lg sm:rounded-xl border-2 border-green-500 text-green-600 text-sm sm:text-base font-bold hover:bg-green-50 transition-all"

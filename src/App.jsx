@@ -10,9 +10,12 @@ import Doctors from './components/Doctors';
 import Gallery from './components/Gallery';
 import WhatsAppButton from './components/WhatsAppButton';
 import CallModal from './components/CallModal';
+import ScrollToDoctorButton from './components/ScrollToDoctorButton';
 import Footer from './components/Footer';
 import Testimonials from './components/Testimonials';
 import Panchkarma from './components/Panchkarma';
+import PatientGuidelines from './components/PatientGuidelines';
+import SpecializedTreatments from './components/SpecializedTreatments';
 
 
 function App() {
@@ -25,13 +28,16 @@ function App() {
         <About />
         <Facilities />
         <DiseaseInfo />
+        <PatientGuidelines />
         <MedicalServices />
+        <SpecializedTreatments />
         <Panchkarma />
         <Testimonials />
         <Doctors />
         <Gallery />
       </main>
       <WhatsAppButton />
+      <ScrollToDoctorButton />
       <CallModal />
       <Footer />
     </div>
