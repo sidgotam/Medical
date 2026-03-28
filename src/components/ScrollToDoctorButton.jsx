@@ -98,7 +98,7 @@ const ScrollToDoctorButton = () => {
                 <Stethoscope size={16} className="text-white" />
               </div>
               <span className="font-extrabold text-[10px] md:text-xs tracking-tight whitespace-nowrap drop-shadow-md uppercase italic">
-                Get Consultation
+                Our Doctors
               </span>
             </div>
 
