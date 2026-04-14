@@ -1,5 +1,5 @@
 import React from 'react';
-import { Microscope, Activity, BedDouble, Pill, Zap, Scan, Sparkles, Baby, Users, HeartPulse, Stethoscope, Droplet } from 'lucide-react';
+import { Microscope, Activity, BedDouble, Pill, Zap, Scan, Sparkles, Baby, Users, HeartPulse, Stethoscope, Droplet, Worm } from 'lucide-react';
 
 const facilityList = [
   {
@@ -30,9 +30,8 @@ const facilityList = [
 
   {
     title: "Leech Therapy",
-    //change the logo to leech
     desc: "लीच थिरैपी द्वारा पुराने चर्म रोग एवं गंजापन की चिकित्सा।",
-    icon: <Droplet size={28} />
+    icon: <Worm size={28} />
   },
   {
     title: "Ayurvedic Vaccination",

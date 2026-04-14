@@ -64,6 +64,7 @@ const slides = [
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [showCallNumbers, setShowCallNumbers] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
   const touchStartX = React.useRef(null);
   const touchEndX = React.useRef(null);
   const isDragging = React.useRef(false);
@@ -71,11 +72,14 @@ const Hero = () => {
 
   useEffect(() => {
     setShowCallNumbers(false);
+    if (isPaused) return;
+
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
     }, 5000); // Change slide every 5 seconds
+    
     return () => clearInterval(timer);
-  }, [currentSlide]);
+  }, [currentSlide, isPaused]);
 
   const minSwipeDistance = 50;
 
@@ -105,14 +109,14 @@ const Hero = () => {
     }
   };
 
-  const onTouchStart = (e) => handleDragStart(e.targetTouches[0].clientX);
+  const onTouchStart = (e) => { setIsPaused(true); handleDragStart(e.targetTouches[0].clientX); };
   const onTouchMove = (e) => handleDragMove(e.targetTouches[0].clientX);
-  const onTouchEnd = handleDragEnd;
+  const onTouchEnd = () => { setIsPaused(false); handleDragEnd(); };
 
-  const onMouseDown = (e) => handleDragStart(e.clientX);
+  const onMouseDown = (e) => { setIsPaused(true); handleDragStart(e.clientX); };
   const onMouseMove = (e) => handleDragMove(e.clientX);
-  const onMouseUp = handleDragEnd;
-  const onMouseLeave = handleDragEnd;
+  const onMouseUp = () => { setIsPaused(false); handleDragEnd(); };
+  const onMouseLeave = () => { setIsPaused(false); handleDragEnd(); };
 
   const handleSlideClick = (id) => {
     if (id === 1) {
@@ -157,6 +161,7 @@ const Hero = () => {
       onMouseDown={onMouseDown}
       onMouseMove={onMouseMove}
       onMouseUp={onMouseUp}
+      onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={onMouseLeave}
     >
       <div className="container-custom relative z-20 w-full flex flex-col items-center justify-center">
