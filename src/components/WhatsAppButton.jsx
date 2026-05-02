@@ -3,7 +3,7 @@ import { MessageCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const WhatsAppButton = () => {
-  const phoneNumber = "919450878415"; // Based on Hero.jsx slide 3 logic
+  const phoneNumber = "918052552950"; // Based on Hero.jsx slide 3 logic
   const message = "Hello! I'm interested in booking an appointment or learning more about your services.";
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
