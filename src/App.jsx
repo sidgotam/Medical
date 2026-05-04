@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from './components/Navbar';
+import Banner from './components/Banner';
 import Hero from './components/Hero';
 import Services from './components/Services';
 import About from './components/About';
@@ -8,7 +9,7 @@ import MedicalServices from './components/MedicalServices';
 import DiseaseInfo from './components/DiseaseInfo';
 import Doctors from './components/Doctors';
 import Gallery from './components/Gallery';
-import WhatsAppButton from './components/WhatsAppButton';
+import FloatingActions from './components/FloatingActions';
 import CallModal from './components/CallModal';
 import ScrollToDoctorButton from './components/ScrollToDoctorButton';
 import Footer from './components/Footer';
@@ -36,7 +37,7 @@ function App() {
         <Doctors />
         <Gallery />
       </main>
-      <WhatsAppButton />
+      <FloatingActions />
       <ScrollToDoctorButton />
       <CallModal />
       <Footer />
