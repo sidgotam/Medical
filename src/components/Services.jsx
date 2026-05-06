@@ -41,7 +41,7 @@ const Services = () => {
   };
 
   return (
-    <section id="services" className="py-[4vw] md:py-[4vw] bg-white relative z-10 -mt-10 md:-mt-16 rounded-t-[3rem] shadow-sm border-t border-gray-100 overflow-hidden">
+    <section id="services" className="pt-[6vw] pb-[4vw] md:pt-10 md:pb-[4vw] bg-white relative z-10 -mt-4 md:-mt-8 rounded-t-[3rem] shadow-sm border-t border-gray-100 overflow-hidden">
       <div className="max-w-container mx-auto px-[4vw] md:px-[2vw]">
         <div className="flex flex-row items-center justify-between mb-6 md:mb-[1.5vw] bg-white p-4 md:p-[1.5vw] rounded-2xl md:rounded-[1vw] shadow-sm border border-gray-100">
           <div className="shrink">
